@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Trần Minh Đức</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="resume-container">
+        <a id="pdf-btn" href="#" target="_blank">
+            <i class="fas fa-file-download"></i> <span id="lbl-download">PDF</span>
+        </a>
+
+        <button id="lang-btn" onclick="toggleLanguage()">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" id="lang-flag"> 
+            <span id="lang-text">EN</span>
+        </button>
+
+        <aside class="left-col">
+            <div class="profile-pic">
+                <img src="images/avatar.jpg" alt="Avatar" onerror="this.src='https://via.placeholder.com/150'">
+            </div>
+
+            <div class="contact-section">
+                <h2 id="sb-name">Loading...</h2>
+                <p id="sb-title" class="job-title"></p>
+                
+                <div class="contact-list">
+                    <div class="c-item"><i class="fas fa-map-marker-alt"></i> <span id="sb-address"></span></div>
+                    <div class="c-item"><i class="fas fa-envelope"></i> <span>duc.tran@hcmut.edu.vn</span></div>
+                    <div class="c-item"><i class="fas fa-phone"></i> <span>0879 233 369</span></div>
+                    <div class="c-item"><i class="fab fa-github"></i> <a href="https://github.com/denystran">github.com/denystran</a></div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <h3><i class="fas fa-university"></i> <span id="lbl-edu">Học Vấn</span></h3>
+                <div id="edu-list"></div>
+            </div>
+
+            <div class="section-box">
+                <h3><i class="fas fa-wrench"></i> <span id="lbl-skills">Kỹ Năng</span></h3>
+                
+                <p class="skill-cat" id="lbl-mech">Cơ khí</p>
+                <div class="tags" id="skill-mech"></div>
+
+                <p class="skill-cat" id="lbl-elec">Điện tử</p>
+                <div class="tags" id="skill-elec"></div>
+
+                <p class="skill-cat" id="lbl-prog">Lập trình</p>
+                <div class="tags" id="skill-prog"></div>
+            </div>
+        </aside>
+
+        <main class="right-col">
+            <section class="intro-section">
+                <h1 class="main-title" id="lbl-intro">Hồ sơ</h1>
+                <p id="main-about"></p>
+            </section>
+
+            <section class="project-section">
+                <h2 class="section-title"><i class="fas fa-rocket"></i> <span id="lbl-projects">Dự Án</span></h2>
+                <div class="grid-container" id="project-list">
+                    </div>
+            </section>
+
+            <section class="cert-section" style="margin-top: 40px;">
+                <h2 class="section-title">
+                    <i class="fas fa-award" id="cert-header-icon"></i> 
+                    <span id="lbl-certs">Chứng Chỉ</span>
+                </h2>
+                
+                <div class="cert-grid" id="cert-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="proof-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-list" class="modal-list-container"></div>
+        </div>
+    </div>
+
+    <script>
+        let fullData = {}; 
+        let currentLang = 'vi';
+
+        // --- 1. HÀM RENDER GIAO DIỆN ---
+        function renderCV(langData) {
+            const labels = langData.labels;
+            const data = langData;
+
+            // Cập nhật Link PDF và Nhãn
+            const pdfBtn = document.getElementById('pdf-btn');
+            pdfBtn.href = data.profile.cv_file;
+
+            document.getElementById('lbl-certs').textContent = labels.certs;
+            document.getElementById('lbl-edu').textContent = labels.edu;
+            document.getElementById('lbl-skills').textContent = labels.skills;
+            document.getElementById('lbl-mech').textContent = labels.mech;
+            document.getElementById('lbl-elec').textContent = labels.elec;
+            document.getElementById('lbl-prog').textContent = labels.prog;
+            document.getElementById('lbl-intro').textContent = labels.intro;
+            document.getElementById('lbl-projects').textContent = labels.projects;
+
+            // Cập nhật Profile
+            document.getElementById('sb-name').textContent = data.profile.name;
+            document.getElementById('sb-title').textContent = data.profile.title;
+            document.getElementById('sb-address').textContent = data.profile.address;
+            document.getElementById('main-about').textContent = data.profile.about;
+
+            // Render Học vấn & Kỹ năng
+            const eduContainer = document.getElementById('edu-list');
+            eduContainer.innerHTML = ''; 
+            data.education.forEach(edu => {
+                eduContainer.innerHTML += `
+                    <div class="edu-item">
+                        <h4>${edu.school}</h4>
+                        <p class="major">${edu.major}</p>
+                        <p class="time">${edu.time}</p>
+                        <p class="courses"><strong>${labels.courses_prefix}</strong> ${edu.courses}</p>
+                    </div>`;
+            });
+
+            const fillTags = (id, arr) => {
+                document.getElementById(id).innerHTML = arr.map(tag => `<span class="tag">${tag}</span>`).join('');
+            };
+            fillTags('skill-mech', data.skills.mechanical);
+            fillTags('skill-elec', data.skills.electronics);
+            fillTags('skill-prog', data.skills.programming);
+
+            // --- A. RENDER DỰ ÁN (CẬP NHẬT GỌI MODAL) ---
+            const projContainer = document.getElementById('project-list');
+            projContainer.innerHTML = ''; 
+            
+            data.projects.forEach((proj, index) => {
+                const techHtml = proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
+                const hasDocs = proj.documents && proj.documents.length > 0;
+                
+                // Gọi openModal với tham số 'projects'
+                const clickAttr = hasDocs ? `onclick="openModal('projects', ${index})"` : '';
+                const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
+                const expandIcon = hasDocs ? `<i class="fas fa-expand-arrows-alt" style="float:right; color:#bdc3c7; font-size:14px; margin-top:5px;"></i>` : '';
+
+                projContainer.innerHTML += `
+                    <div class="project-card" ${clickAttr} style="${cursorStyle}" title="${hasDocs ? 'Bấm để xem chi tiết' : ''}">
+                        <div class="card-header">
+                            <h3>${proj.name}</h3>
+                            <span class="subject-tag">${proj.subject}</span>
+                        </div>
+                        <div class="card-body"><p>${proj.desc}</p></div>
+                        <div class="card-footer">
+                            <div style="width: 100%;">${techHtml}</div>
+                            ${expandIcon}
+                        </div>
+                    </div>`;
+            });
+
+            // --- B. RENDER CHỨNG CHỈ (CÓ POPUP) ---
+            const certContainer = document.getElementById('cert-list');
+            certContainer.innerHTML = ''; 
+            
+            if (data.certificates) {
+                data.certificates.forEach((cert, index) => {
+                    // Kiểm tra có tài liệu không
+                    const hasDocs = cert.documents && cert.documents.length > 0;
+                    
+                    // Gọi openModal với tham số 'certificates'
+                    const clickAttr = hasDocs ? `onclick="openModal('certificates', ${index})"` : '';
+                    const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
+                    // Icon con mắt nhỏ nếu bấm được
+                    const eyeIcon = hasDocs ? `<i class="far fa-eye" style="margin-left:5px; font-size:12px; color:#3498db;"></i>` : '';
+
+                    certContainer.innerHTML += `
+                        <div class="cert-card" ${clickAttr} style="${cursorStyle}">
+                            <h4>${cert.name} ${eyeIcon}</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span class="cert-issuer"><i class="fas fa-award"></i> ${cert.issuer}</span>
+                                <span class="cert-date">${cert.date}</span>
+                            </div>
+                        </div>`;
+                });
+            }
+        }
+
+        // --- 2. HÀM ĐỔI NGÔN NGỮ ---
+        function toggleLanguage() {
+            const btnText = document.getElementById('lang-text');
+            const btnFlag = document.getElementById('lang-flag');
+            currentLang = (currentLang === 'vi') ? 'en' : 'vi';
+            
+            if (currentLang === 'en') {
+                btnFlag.src = "https://flagcdn.com/w40/vn.png";
+                btnText.textContent = "VI";
+            } else {
+                btnFlag.src = "https://flagcdn.com/w40/gb.png";
+                btnText.textContent = "EN";
+            }
+            renderCV(fullData[currentLang]);
+        }
+
+        // --- 3. HÀM MỞ MODAL ĐA NĂNG (QUAN TRỌNG) ---
+        // section: 'projects' hoặc 'certificates'
+        function openModal(section, index) {
+            // Lấy đúng danh sách dựa vào section
+            const item = fullData[currentLang][section][index];
+            
+            if (!item || !item.documents) return;
+
+            // Điền dữ liệu vào Popup
+            document.getElementById('modal-title').innerText = item.name;
+            const listContainer = document.getElementById('modal-list');
+            listContainer.innerHTML = ''; 
+            
+            item.documents.forEach(doc => {
+                let icon = 'fa-file';
+                if (doc.type === 'pdf') icon = 'fa-file-pdf';
+                else if (doc.type === 'img') icon = 'fa-image';
+                else if (doc.type === 'video') icon = 'fa-youtube';
+                
+                listContainer.innerHTML += `
+                    <a href="${doc.link}" target="_blank" class="modal-file-item">
+                        <i class="fas ${icon}"></i>
+                        <span>${doc.label}</span>
+                        <i class="fas fa-external-link-alt" style="margin-left: auto; font-size: 12px; color: #999;"></i>
+                    </a>`;
+            });
+            document.getElementById('proof-modal').style.display = "block";
+        }
+
+        // --- 4. CÁC HÀM HỖ TRỢ KHÁC ---
+        function closeModal() {
+            document.getElementById('proof-modal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('proof-modal');
+            if (event.target == modal) closeModal();
+        }
+
+        // --- 5. KHỞI CHẠY ---
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                fullData = data;
+                renderCV(fullData.vi);
+            })
+            .catch(err => { console.error(err); alert("Lỗi đọc file data.json!"); });
+    </script>
+</body>
+</html>

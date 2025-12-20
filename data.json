@@ -1,0 +1,156 @@
+{
+  "vi": {
+    "labels": {
+      "certs": "Chứng Chỉ",
+      "edu": "Học Vấn",
+      "skills": "Kỹ Năng",
+      "mech": "Cơ khí & Thiết kế",
+      "elec": "Điện tử & IoT",
+      "prog": "Lập trình",
+      "intro": "Hồ sơ năng lực",
+      "projects": "Dự Án Tiêu Biểu",
+      "courses_prefix": "Môn tiêu biểu: "
+    },
+    "profile": {
+      "cv_file": "cv-vi.pdf",
+      "name": "Trần Minh Đức",
+      "title": "Kỹ sư Cơ khí Tương lai | IoT & Automation",
+      "about": "Sinh viên năm 3 chuyên ngành Kỹ thuật Cơ khí tại ĐH Bách Khoa TP.HCM. Có niềm đam mê lớn với Cơ điện tử, kết hợp tư duy thiết kế cơ khí với lập trình hệ thống. Mong muốn ứng dụng công nghệ vào tối ưu hóa sản xuất.",
+      "address": "TP. Hồ Chí Minh, Việt Nam"
+    },
+    "education": [
+      {
+        "school": "Đại học Bách Khoa - ĐHQG TP.HCM",
+        "major": "Kỹ thuật Cơ khí (Khóa K23)",
+        "time": "2023 - 2028 (Dự kiến)",
+        "courses": "Dung sai & Kỹ thuật đo, Sức bền vật liệu, Trang bị điện - điện tử trong máy công nghiệp, Vật liệu học & xử lý."
+      }
+    ],
+    "skills": {
+      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys"],
+      "electronics": ["Thiết kế mạch PCB", "Vi xử lý (Arduino/ESP32)", "Cảm biến & Loadcell"],
+      "programming": ["Python", "C/C++", "HTML/CSS/Git"]
+    },
+    "certificates": [
+      {
+        "name": "Certified SolidWorks Associate (CSWA)",
+        "issuer": "Dassault Systèmes",
+        "date": "2024",
+        
+        "documents": [  
+           { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
+        ]
+      },
+      {
+        "name": "TOEIC 750",
+        "issuer": "IIG Vietnam",
+        "date": "2025",
+        "documents": [
+           { "type": "pdf", "label": "TOEIC Score.pdf", "link": "proofs/toeic.pdf" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Hệ thống Cân Điện Tử (Load Cell)",
+        "subject": "Bài tập lớn môn học",
+        "desc": "Thiết kế hệ thống cân sử dụng cảm biến Load Cell và module HX711. Lập trình Arduino xử lý tín hiệu và hiển thị kết quả chính xác.",
+        "tech": ["Arduino", "C++"],
+        "documents": [
+          { "link": "proofs/BTL_DungSai.pdf", "label": "Báo cáo" },
+          { "link": "proofs/loadcell-schematic.pdf", "label": "Sơ đồ nguyên lý (PDF)" }, 
+          { "link": "proofs/BTL_DungSai.mp4", "label": "Video Demo" }
+        ]
+      },
+
+      {
+        "name": "Mạch Đèn Giao Thông Logic",
+        "subject": "Bài tập lớn môn học",
+        "desc": "Thiết kế mạch điều khiển đèn giao thông sử dụng IC 555 và IC đếm Logic thay vì vi điều khiển.",
+        "tech": ["Proteus", "IC Logic", "PCB Design"],
+        "documents": [
+          { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Báo cáo" },
+          { "link": "proofs/dengiaothong.pdf", "label": "Sơ đồ nguyên lý (PDF)" },
+          { "link": "proofs/BTL_TrangBiĐien.mp4", "label": "Video Demo" }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "labels": {
+      "certs": "Certifications",
+      "edu": "Education",
+      "skills": "Skills",
+      "mech": "Mechanical & Design",
+      "elec": "Electronics & IoT",
+      "prog": "Programming",
+      "intro": "Professional Summary",
+      "projects": "Featured Projects",
+      "courses_prefix": "Relevant Coursework: "
+    },
+    "profile": {
+      "cv_file": "cv-en.pdf",
+      "name": "Tran Minh Duc",
+      "title": "Future Mechanical Engineer | IoT & Automation",
+      "about": "Junior Mechanical Engineering student at Ho Chi Minh City University of Technology (HCMUT). I am passionate about Mechatronics, combining solid mechanical design thinking with system programming. Aiming to apply technology to optimize manufacturing processes.",
+      "address": "Ho Chi Minh City, Vietnam"
+    },
+    "education": [
+      {
+        "school": "Ho Chi Minh City Univ. of Technology (HCMUT)",
+        "major": "Mechanical Engineering (Batch K23)",
+        "time": "2023 - 2028 (Expected)",
+        "courses": "Metrology, Theory of Machines, Machine Elements, Strength of Materials, Microprocessors."
+      }
+    ],
+    "skills": {
+      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys"],
+      "electronics": ["PCB Design", "Microcontrollers (Arduino/ESP32)", "Sensors & Loadcell"],
+      "programming": ["Python", "C/C++", "HTML/CSS/Git"]
+    },
+    "certificates": [
+      {
+        "name": "Certified SolidWorks Associate (CSWA)",
+        "issuer": "Dassault Systèmes",
+        "date": "2024",
+        
+        "documents": [  
+           { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
+        ]
+      },
+      {
+        "name": "TOEIC 750",
+        "issuer": "IIG Vietnam",
+        "date": "2025",
+        "documents": [
+           { "type": "pdf", "label": "TOEIC Score.pdf", "link": "proofs/toeic.pdf" }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Load Cell Weighing System",
+        "subject": "Course Project",
+        "desc": "Designed a weighing system using Load Cell sensors and HX711 module. Programmed Arduino for signal processing and accurate display.",
+        "tech": ["Arduino", "C++"],
+        "documents": [
+          { "link": "proofs/BTL_DungSai.pdf", "label": "Final Report" },
+          { "link": "proofs/loadcell-schematic.pdf", "label": "Schematic Diagram (PDF)" }, 
+          { "link": "proofs/BTL_DungSai.mp4", "label": "Demo Video" }
+        ]
+      },
+
+      {
+        "name": "Traffic Light Logic Circuit",
+        "subject": "Course Project",
+        "desc": "Designed a traffic light control circuit using 555 Timer and Logic ICs instead of microcontrollers.",
+        "tech": ["Proteus", "Logic ICs", "PCB Design"],
+        "documents": [
+          { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Final Report" },
+          { "link": "proofs/dengiaothong.pdf", "label": "Schematic Diagram (PDF)" },
+          { "link": "proofs/BTL_TrangBiĐien.mp4", "label": "Demo Video" }
+        ]
+      }
+    ]
+  }
+}
