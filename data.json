@@ -14,9 +14,9 @@
     "profile": {
       "cv_file": "cv-vi.pdf",
       "name": "Trần Minh Đức",
-      "title": "Sinh viên Kỹ Thuật Cơ khí | Đinh hướng IoT & Automation",
+      "title": "Sinh viên Kỹ thuật Cơ khí | Định hướng IoT & Automation",
       "about": "Sinh viên năm 3 chuyên ngành Kỹ thuật Cơ khí tại ĐH Bách Khoa TP.HCM. Có niềm đam mê lớn với Cơ điện tử, kết hợp tư duy thiết kế cơ khí với lập trình hệ thống. Mong muốn ứng dụng công nghệ vào tối ưu hóa sản xuất.",
-      "address": "TP. Hồ Chí Minh, Việt Nam"
+      "address": "Phường Đông Hòa, TP. Hồ Chí Minh, VN"
     },
     "education": [
       {
@@ -27,7 +27,7 @@
       }
     ],
     "skills": {
-      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys"],
+      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys(Cơ bản)"],
       "electronics": ["Thiết kế mạch PCB", "Vi xử lý (Arduino/ESP32)", "Cảm biến & Loadcell"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
@@ -42,7 +42,7 @@
         ]
       },
       {
-        "name": "TOEIC 750",
+        "name": "TOEIC 735",
         "issuer": "IIG Vietnam",
         "date": "2025",
         "documents": [
@@ -54,7 +54,7 @@
       {
         "name": "Hệ thống Cân Điện Tử (Load Cell)",
         "subject": "Bài tập lớn môn học",
-        "desc": "Thiết kế hệ thống cân sử dụng cảm biến Load Cell và module HX711. Lập trình Arduino xử lý tín hiệu và hiển thị kết quả chính xác.",
+        "desc": "Thiết kế hệ thống cân sử dụng cảm biến Load Cell và module HX711. Lập trình Arduino xử lý tín hiệu & hiển thị kết quả với tải trọng tối đa 5kg sai số 1g, tích hợp tự động bù trừ.",
         "tech": ["Arduino", "C++"],
         "documents": [
           { "link": "proofs/BTL_DungSai.pdf", "label": "Báo cáo" },
@@ -66,7 +66,7 @@
       {
         "name": "Mạch Đèn Giao Thông Logic",
         "subject": "Bài tập lớn môn học",
-        "desc": "Thiết kế mạch điều khiển đèn giao thông sử dụng IC 555 và IC đếm Logic thay vì vi điều khiển.",
+        "desc": "Thiết kế mạch điều khiển giao thông ngã tư 2 làn, tối ưu hóa số lượng cổng logic để giảm chi phí linh kiện, mô phỏng thành công trên Proteus trước khi thi công mạch in.",
         "tech": ["Proteus", "IC Logic", "PCB Design"],
         "documents": [
           { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Báo cáo" },
@@ -93,7 +93,7 @@
       "name": "Tran Minh Duc",
       "title": "Mechanical Engineering Student | IoT & Automation Enthusiast",
       "about": "Junior Mechanical Engineering student at Ho Chi Minh City University of Technology (HCMUT). I am passionate about Mechatronics, combining solid mechanical design thinking with system programming. Aiming to apply technology to optimize manufacturing processes.",
-      "address": "Ho Chi Minh City, Vietnam"
+      "address": "Dong Hoa Ward, Ho Chi Minh City, VN"
     },
     "education": [
       {
@@ -104,7 +104,7 @@
       }
     ],
     "skills": {
-      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys"],
+      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys(Basic)"],
       "electronics": ["PCB Design", "Microcontrollers (Arduino/ESP32)", "Sensors & Loadcell"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
@@ -119,7 +119,7 @@
         ]
       },
       {
-        "name": "TOEIC 750",
+        "name": "TOEIC 735",
         "issuer": "IIG Vietnam",
         "date": "2025",
         "documents": [
@@ -153,6 +153,4 @@
       }
     ]
   }
-
 }
-
