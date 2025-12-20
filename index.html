@@ -10,7 +10,8 @@
 <body>
 
     <div class="resume-container">
-        <a id="pdf-btn" href="#" target="_blank">
+        
+        <a id="pdf-btn" href="#" onclick="window.print(); return false;">
             <i class="fas fa-file-download"></i> <span id="lbl-download">PDF</span>
         </a>
 
@@ -73,7 +74,8 @@
                     <span id="lbl-certs">Chứng Chỉ</span>
                 </h2>
                 
-                <div class="cert-grid" id="cert-list"></div>
+                <div class="cert-grid" id="cert-list">
+                    </div>
             </section>
         </main>
     </div>
@@ -95,9 +97,10 @@
             const labels = langData.labels;
             const data = langData;
 
-            // Cập nhật Link PDF và Nhãn
-            const pdfBtn = document.getElementById('pdf-btn');
-            pdfBtn.href = data.profile.cv_file;
+            // SỬA: Cập nhật chữ trên nút in (PDF / PDF)
+            // Không gán href file nữa vì dùng window.print()
+            const downText = labels.download ? labels.download : "PDF";
+            document.getElementById('lbl-download').textContent = downText;
 
             document.getElementById('lbl-certs').textContent = labels.certs;
             document.getElementById('lbl-edu').textContent = labels.edu;
@@ -114,7 +117,7 @@
             document.getElementById('sb-address').textContent = data.profile.address;
             document.getElementById('main-about').textContent = data.profile.about;
 
-            // Render Học vấn & Kỹ năng
+            // Render Học vấn
             const eduContainer = document.getElementById('edu-list');
             eduContainer.innerHTML = ''; 
             data.education.forEach(edu => {
@@ -127,6 +130,7 @@
                     </div>`;
             });
 
+            // Render Kỹ năng
             const fillTags = (id, arr) => {
                 document.getElementById(id).innerHTML = arr.map(tag => `<span class="tag">${tag}</span>`).join('');
             };
@@ -134,7 +138,7 @@
             fillTags('skill-elec', data.skills.electronics);
             fillTags('skill-prog', data.skills.programming);
 
-            // --- A. RENDER DỰ ÁN (CẬP NHẬT GỌI MODAL) ---
+            // --- A. RENDER DỰ ÁN ---
             const projContainer = document.getElementById('project-list');
             projContainer.innerHTML = ''; 
             
@@ -142,10 +146,9 @@
                 const techHtml = proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
                 const hasDocs = proj.documents && proj.documents.length > 0;
                 
-                // Gọi openModal với tham số 'projects'
                 const clickAttr = hasDocs ? `onclick="openModal('projects', ${index})"` : '';
                 const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
-                const expandIcon = hasDocs ? `<i class="fas fa-expand-arrows-alt" style="float:right; color:#bdc3c7; font-size:14px; margin-top:5px;"></i>` : '';
+                const expandIcon = hasDocs ? `<i class="" style="float:right; color:#bdc3c7; font-size:14px; margin-top:5px;"></i>` : '';
 
                 projContainer.innerHTML += `
                     <div class="project-card" ${clickAttr} style="${cursorStyle}" title="${hasDocs ? 'Bấm để xem chi tiết' : ''}">
@@ -161,19 +164,16 @@
                     </div>`;
             });
 
-            // --- B. RENDER CHỨNG CHỈ (CÓ POPUP) ---
+            // --- B. RENDER CHỨNG CHỈ ---
             const certContainer = document.getElementById('cert-list');
             certContainer.innerHTML = ''; 
             
             if (data.certificates) {
                 data.certificates.forEach((cert, index) => {
-                    // Kiểm tra có tài liệu không
                     const hasDocs = cert.documents && cert.documents.length > 0;
                     
-                    // Gọi openModal với tham số 'certificates'
                     const clickAttr = hasDocs ? `onclick="openModal('certificates', ${index})"` : '';
                     const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
-                    // Icon con mắt nhỏ nếu bấm được
                     const eyeIcon = hasDocs ? `<i class="far fa-eye" style="margin-left:5px; font-size:12px; color:#3498db;"></i>` : '';
 
                     certContainer.innerHTML += `
@@ -204,15 +204,11 @@
             renderCV(fullData[currentLang]);
         }
 
-        // --- 3. HÀM MỞ MODAL ĐA NĂNG (QUAN TRỌNG) ---
-        // section: 'projects' hoặc 'certificates'
+        // --- 3. HÀM MỞ MODAL ---
         function openModal(section, index) {
-            // Lấy đúng danh sách dựa vào section
             const item = fullData[currentLang][section][index];
-            
             if (!item || !item.documents) return;
 
-            // Điền dữ liệu vào Popup
             document.getElementById('modal-title').innerText = item.name;
             const listContainer = document.getElementById('modal-list');
             listContainer.innerHTML = ''; 
@@ -233,7 +229,6 @@
             document.getElementById('proof-modal').style.display = "block";
         }
 
-        // --- 4. CÁC HÀM HỖ TRỢ KHÁC ---
         function closeModal() {
             document.getElementById('proof-modal').style.display = "none";
         }
@@ -250,7 +245,7 @@
                 fullData = data;
                 renderCV(fullData.vi);
             })
-            .catch(err => { console.error(err); alert("Lỗi đọc file data.json!"); });
+            .catch(err => { console.error(err); alert("Lỗi đọc file data.json! Hãy kiểm tra lại (dùng Live Server)."); });
     </script>
 </body>
 </html>

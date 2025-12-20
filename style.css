@@ -101,15 +101,9 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
 
 .card-footer { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
 .tech-badge { background: #e3f2fd; color: #1565c0; font-size: 12px; padding: 3px 8px; border-radius: 4px; font-weight: 500; }
-
-/* --- ICON FACEBOOK VERIFY (QUAN TRỌNG) --- */
-.fb-verify-icon {
-    width: 26px;        /* Kích thước icon */
-    height: 26px;
-    color: #1877F2;     /* Màu xanh dương chuẩn Facebook */
-    margin-right: 5px;
-    flex-shrink: 0;     /* Không bị méo khi màn hình nhỏ */
-}
+.link-icons { margin-left: auto; display: flex; gap: 10px; }
+.link-icons a { color: #3498db; font-size: 18px; transition: color 0.2s; }
+.link-icons a:hover { color: #21618c; } 
 
 /* --- CHỨNG CHỈ (CERTIFICATES) --- */
 .cert-grid {
@@ -125,11 +119,14 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
     padding: 15px;
     border-left: 4px solid #3498db; /* Viền xanh đồng bộ */
     transition: transform 0.2s;
+    cursor: pointer; /* Thêm cái này để biết là bấm được */
 }
 
 .cert-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Bóng đậm hơn chút */
+    background-color: #f9fcff;
+    border-color: #3498db;
 }
 
 .cert-card h4 { font-size: 16px; color: #2c3e50; margin-bottom: 8px; }
@@ -139,26 +136,40 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
 
 .cert-date { font-size: 12px; color: #95a5a6; font-style: italic; }
 
-/* --- BUTTONS (PDF & LANG) --- */
+/* --- CSS CHO ICON HUÂN CHƯƠNG Ở TIÊU ĐỀ --- */
+#cert-header-icon {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+/* --- NÚT DOWNLOAD PDF --- */
 #pdf-btn {
     position: absolute;
-    top: 60px;
+    top: 60px; /* Nằm dưới nút ngôn ngữ */
     right: 20px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
     padding: 8px 15px;
-    background: #e74c3c;
-    text-decoration: none; 
-    border-radius: 20px;
+    
+    background: #e74c3c; /* Màu đỏ */
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-decoration: none; /* Quan trọng: Bỏ gạch chân của thẻ a */
+    
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(90, 85, 85, 0.1);
     transition: all 0.3s ease;
     z-index: 1000;
 }
-#pdf-btn:hover { background: #c0392b; transform: translateY(-2px); }
 
+#pdf-btn:hover {
+    background: #c0392b; /* Màu đỏ đậm khi di chuột */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+    color: white; /* Giữ chữ màu trắng */
+}
+
+/* --- NÚT ĐỔI NGÔN NGỮ (LANG BTN) --- */
 #lang-btn {
     position: absolute;
     top: 20px;
@@ -176,9 +187,27 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     z-index: 1000;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;   
+    transform: translateZ(0);             
 }
-#lang-btn:hover { background: #3498db; color: white; transform: translateY(-2px); }
-#lang-flag { width: 20px; height: auto; border-radius: 2px; }
+
+#pdf-btn i {
+    font-size: 16px;
+    display: inline-block;
+}
+
+#lang-btn:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+#lang-flag {
+    width: 20px;
+    height: auto;
+    border-radius: 2px;
+}
 
 /* --- MODAL POPUP --- */
 .modal {
@@ -251,8 +280,62 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
     .card-header { flex-direction: column; gap: 5px; }
 }
 
+/* --- CẤU HÌNH KHI IN RA PDF (QUAN TRỌNG) --- */
 @media print {
-    #lang-btn, #pdf-btn, .close-btn { display: none !important; }
-    body { background: white; }
-    .resume-container { box-shadow: none; margin: 0; width: 100%; }
+    /* 1. Thiết lập trang giấy A4 */
+    @page {
+        size: A4;
+        margin: 0; /* Xóa lề trắng mặc định của máy in */
+    }
+
+    /* 2. Ép buộc hiện màu nền (Quan trọng để cột trái có màu xanh) */
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-color: white;
+    }
+
+    /* 3. Ẩn các nút không cần thiết */
+    #pdf-btn, #lang-btn, .modal, .close-btn {
+        display: none !important;
+    }
+
+    /* 4. CẤU HÌNH KHUNG CHÍNH (QUAN TRỌNG NHẤT) */
+    .resume-container {
+        display: flex !important;       /* Bắt buộc dùng Flexbox */
+        flex-direction: row !important; /* Bắt buộc xếp hàng ngang */
+        width: 210mm !important;        /* Chiều rộng chuẩn khổ A4 */
+        min-height: 297mm !important;   /* Chiều cao tối thiểu khổ A4 */
+        margin: 0 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;    /* Cắt bỏ phần thừa nếu có */
+    }
+
+    /* 5. Cố định kích thước 2 cột để không bị rớt dòng */
+    .left-col {
+        width: 30% !important; /* Cột trái chiếm 30% */
+        min-width: 200px !important; /* Đảm bảo không bị quá bé */
+        height: 100vh !important; /* Kéo dài hết trang giấy */
+        background-color: #1a2a3a !important; /* Màu xanh navy */
+        color: white !important;
+        padding: 20px !important;
+    }
+
+    .right-col {
+        width: 70% !important; /* Cột phải chiếm 70% */
+        padding: 30px !important;
+    }
+
+    /* 6. Fix lỗi link và ngắt trang */
+    a { text-decoration: none !important; color: inherit !important; }
+    
+    /* Không cho phép cắt đôi các thẻ quan trọng */
+    .section-box, .project-card, .cert-card, .edu-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* 7. Thu nhỏ nhẹ nếu nội dung quá dài (Tùy chọn) */
+    /* Mở comment dòng dưới nếu CV của bạn bị tràn sang trang 2 một chút */
+    /* body { transform: scale(0.95); transform-origin: top left; width: 105%; } */
 }

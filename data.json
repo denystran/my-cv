@@ -1,6 +1,8 @@
 {
   "vi": {
     "labels": {
+      "download": "PDF",
+      "intro": "Hồ sơ",
       "certs": "Chứng Chỉ",
       "edu": "Học Vấn",
       "skills": "Kỹ Năng",
@@ -35,7 +37,7 @@
       {
         "name": "Certified SolidWorks Associate (CSWA)",
         "issuer": "Dassault Systèmes",
-        "date": "2024",
+        "date": "2025",
         
         "documents": [  
            { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
@@ -78,6 +80,8 @@
   },
   "en": {
     "labels": {
+      "download": "PDF",
+      "intro": "Profile",
       "certs": "Certifications",
       "edu": "Education",
       "skills": "Skills",
@@ -112,7 +116,7 @@
       {
         "name": "Certified SolidWorks Associate (CSWA)",
         "issuer": "Dassault Systèmes",
-        "date": "2024",
+        "date": "2025",
         
         "documents": [  
            { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
