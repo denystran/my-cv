@@ -14,7 +14,7 @@
     "profile": {
       "cv_file": "cv-vi.pdf",
       "name": "Trần Minh Đức",
-      "title": "Sinh viên Kỹ Thuật Cơ khí | IoT & Automation",
+      "title": "Sinh viên Kỹ Thuật Cơ khí | Đinh hướng IoT & Automation",
       "about": "Sinh viên năm 3 chuyên ngành Kỹ thuật Cơ khí tại ĐH Bách Khoa TP.HCM. Có niềm đam mê lớn với Cơ điện tử, kết hợp tư duy thiết kế cơ khí với lập trình hệ thống. Mong muốn ứng dụng công nghệ vào tối ưu hóa sản xuất.",
       "address": "TP. Hồ Chí Minh, Việt Nam"
     },
@@ -91,7 +91,7 @@
     "profile": {
       "cv_file": "cv-en.pdf",
       "name": "Tran Minh Duc",
-      "title": "Student Mechanical Engineer | IoT & Automation",
+      "title": "Mechanical Engineering Student | IoT & Automation Enthusiast",
       "about": "Junior Mechanical Engineering student at Ho Chi Minh City University of Technology (HCMUT). I am passionate about Mechatronics, combining solid mechanical design thinking with system programming. Aiming to apply technology to optimize manufacturing processes.",
       "address": "Ho Chi Minh City, Vietnam"
     },
@@ -155,3 +155,4 @@
   }
 
 }
+
