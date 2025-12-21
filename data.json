@@ -54,7 +54,7 @@
       {
         "name": "Hệ thống Cân Điện Tử (Load Cell)",
         "subject": "Bài tập lớn môn học",
-        "desc": "Thiết kế hệ thống cân sử dụng cảm biến Load Cell và module HX711. Lập trình Arduino xử lý tín hiệu & hiển thị kết quả với tải trọng tối đa 5kg sai số 1g, tích hợp tự động bù trừ.",
+        "desc": "Chế tạo một hệ thống đo lường đa năng, tích hợp giữa phép đo vật lý và sinh học, sử dụng vi điều khiển Arduino và xử lý dữ liệu chuyên sâu bằng ngôn ngữ Python",
         "tech": ["Arduino", "C++", "Python"],
         "documents": [
           { "link": "proofs/BTL_DungSai.pdf", "label": "Báo cáo" },
@@ -130,7 +130,7 @@
       {
         "name": "Load Cell Weighing System",
         "subject": "Course Project",
-        "desc": "Designed a weighing system using Load Cell sensors and HX711 module. Programmed Arduino for signal processing and accurate display (Max load: 5kg, Error: 1g) with auto-tare integration.",
+        "desc": "Develop a versatile measurement system integrating physical and biological measurements, using an Arduino microcontroller and intensive data processing in Python.",
         "tech": ["Arduino", "C++", "Python"],
         "documents": [
           { "link": "proofs/BTL_DungSai.pdf", "label": "Final Report" },
@@ -151,4 +151,5 @@
       }
     ]
   }
+
 }
