@@ -128,7 +128,7 @@
     ],
     "projects": [
       {
-        "name": "Combined Force Measurement and Electrocardiogram (ECG) Data Processing System",
+        "name": "Combined Force Measurement and ECG Data Processing System",
         "subject": "Course Project",
         "desc": "Develop a versatile measurement system integrating physical and biological measurements, using an Arduino microcontroller and intensive data processing in Python.",
         "tech": ["Arduino", "C++", "Python"],
@@ -153,4 +153,5 @@
   }
 
 }
+
 
