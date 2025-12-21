@@ -280,7 +280,7 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
     .card-header { flex-direction: column; gap: 5px; }
 }
 
-/* --- CẤU HÌNH KHI IN RA PDF (QUAN TRỌNG) --- */
+/* --- CẤU HÌNH KHI IN RA PDF --- */
 @media print {
     /* 1. Thiết lập trang giấy A4 */
     @page {
@@ -313,7 +313,7 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
 
     /* 5. Cố định kích thước 2 cột để không bị rớt dòng */
     .left-col {
-        width: 30% !important; /* Cột trái chiếm 30% */
+        width: 35% !important; /* Cột trái chiếm 35% */
         min-width: 200px !important; /* Đảm bảo không bị quá bé */
         height: 100vh !important; /* Kéo dài hết trang giấy */
         background-color: #1a2a3a !important; /* Màu xanh navy */
@@ -322,7 +322,7 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
     }
 
     .right-col {
-        width: 70% !important; /* Cột phải chiếm 70% */
+        width: 65% !important; /* Cột phải chiếm 65% */
         padding: 30px !important;
     }
 
@@ -336,6 +336,5 @@ body { background-color: #eef2f3; color: #333; line-height: 1.6; }
     }
 
     /* 7. Thu nhỏ nhẹ nếu nội dung quá dài (Tùy chọn) */
-    /* Mở comment dòng dưới nếu CV của bạn bị tràn sang trang 2 một chút */
-    /* body { transform: scale(0.95); transform-origin: top left; width: 105%; } */
+    /* body { transform: scale(0.90); transform-origin: top left; width: 105%; } */
 }

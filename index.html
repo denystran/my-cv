@@ -193,6 +193,7 @@
             const btnText = document.getElementById('lang-text');
             const btnFlag = document.getElementById('lang-flag');
             currentLang = (currentLang === 'vi') ? 'en' : 'vi';
+            document.documentElement.lang = currentLang;
             
             if (currentLang === 'en') {
                 btnFlag.src = "https://flagcdn.com/w40/vn.png";
@@ -248,5 +249,4 @@
             .catch(err => { console.error(err); alert("Lỗi đọc file data.json! Hãy kiểm tra lại (dùng Live Server)."); });
     </script>
 </body>
-
 </html>
