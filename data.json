@@ -52,7 +52,7 @@
     ],
     "projects": [
       {
-        "name": "Hệ thống Cân Điện Tử (Load Cell)",
+        "name": "Hệ thống Đo lực và Điện tâm đồ kết hợp Xử lý Dữ liệu",
         "subject": "Bài tập lớn môn học",
         "desc": "Chế tạo một hệ thống đo lường đa năng, tích hợp giữa phép đo vật lý và sinh học, sử dụng vi điều khiển Arduino và xử lý dữ liệu chuyên sâu bằng ngôn ngữ Python",
         "tech": ["Arduino", "C++", "Python"],
@@ -128,7 +128,7 @@
     ],
     "projects": [
       {
-        "name": "Load Cell Weighing System",
+        "name": "Combined Force Measurement and Electrocardiogram (ECG) Data Processing System",
         "subject": "Course Project",
         "desc": "Develop a versatile measurement system integrating physical and biological measurements, using an Arduino microcontroller and intensive data processing in Python.",
         "tech": ["Arduino", "C++", "Python"],
@@ -153,3 +153,4 @@
   }
 
 }
+
