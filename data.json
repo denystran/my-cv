@@ -1,8 +1,7 @@
 {
   "vi": {
     "labels": {
-      "download": "PDF",
-      "intro": "Hồ sơ",
+      "download": "Lưu PDF",
       "certs": "Chứng Chỉ",
       "edu": "Học Vấn",
       "skills": "Kỹ Năng",
@@ -29,7 +28,7 @@
       }
     ],
     "skills": {
-      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys(Cơ bản)"],
+      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys (Cơ bản)"],
       "electronics": ["Thiết kế mạch PCB", "Vi xử lý (Arduino/ESP32)", "Cảm biến & Loadcell"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
@@ -38,8 +37,7 @@
         "name": "Certified SolidWorks Associate (CSWA)",
         "issuer": "Dassault Systèmes",
         "date": "2025",
-        
-        "documents": [  
+        "documents": [
            { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
         ]
       },
@@ -57,14 +55,13 @@
         "name": "Hệ thống Cân Điện Tử (Load Cell)",
         "subject": "Bài tập lớn môn học",
         "desc": "Thiết kế hệ thống cân sử dụng cảm biến Load Cell và module HX711. Lập trình Arduino xử lý tín hiệu & hiển thị kết quả với tải trọng tối đa 5kg sai số 1g, tích hợp tự động bù trừ.",
-        "tech": ["Arduino", "C++"],
+        "tech": ["Arduino", "C++", "Python"],
         "documents": [
           { "link": "proofs/BTL_DungSai.pdf", "label": "Báo cáo" },
           { "link": "proofs/loadcell-schematic.pdf", "label": "Sơ đồ nguyên lý (PDF)" }, 
           { "link": "proofs/BTL_DungSai.mp4", "label": "Video Demo" }
         ]
       },
-
       {
         "name": "Mạch Đèn Giao Thông Logic",
         "subject": "Bài tập lớn môn học",
@@ -80,8 +77,7 @@
   },
   "en": {
     "labels": {
-      "download": "PDF",
-      "intro": "Profile",
+      "download": "Save PDF",
       "certs": "Certifications",
       "edu": "Education",
       "skills": "Skills",
@@ -108,7 +104,7 @@
       }
     ],
     "skills": {
-      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys(Basic)"],
+      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys (Basic)"],
       "electronics": ["PCB Design", "Microcontrollers (Arduino/ESP32)", "Sensors & Loadcell"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
@@ -117,8 +113,7 @@
         "name": "Certified SolidWorks Associate (CSWA)",
         "issuer": "Dassault Systèmes",
         "date": "2025",
-        
-        "documents": [  
+        "documents": [
            { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
         ]
       },
@@ -135,19 +130,18 @@
       {
         "name": "Load Cell Weighing System",
         "subject": "Course Project",
-        "desc": "Designed a weighing system using Load Cell sensors and HX711 module. Programmed Arduino for signal processing and accurate display.",
-        "tech": ["Arduino", "C++"],
+        "desc": "Designed a weighing system using Load Cell sensors and HX711 module. Programmed Arduino for signal processing and accurate display (Max load: 5kg, Error: 1g) with auto-tare integration.",
+        "tech": ["Arduino", "C++", "Python"],
         "documents": [
           { "link": "proofs/BTL_DungSai.pdf", "label": "Final Report" },
           { "link": "proofs/loadcell-schematic.pdf", "label": "Schematic Diagram (PDF)" }, 
           { "link": "proofs/BTL_DungSai.mp4", "label": "Demo Video" }
         ]
       },
-
       {
         "name": "Traffic Light Logic Circuit",
         "subject": "Course Project",
-        "desc": "Designed a traffic light control circuit using 555 Timer and Logic ICs instead of microcontrollers.",
+        "desc": "Designed a 2-lane traffic light control circuit using 555 Timer and Logic ICs. Optimized logic gates to reduce cost and successfully simulated on Proteus before PCB fabrication.",
         "tech": ["Proteus", "Logic ICs", "PCB Design"],
         "documents": [
           { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Final Report" },
