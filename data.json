@@ -52,7 +52,7 @@
     ],
     "projects": [
       {
-        "name": "Hệ thống Đo lực và Điện tâm đồ kết hợp Xử lý Dữ liệu",
+        "name": "Hệ thống Đo lường sinh học đa năng",
         "subject": "Bài tập lớn môn học",
         "desc": "Chế tạo một hệ thống đo lường đa năng, tích hợp giữa phép đo vật lý và sinh học, sử dụng vi điều khiển Arduino và xử lý dữ liệu chuyên sâu bằng ngôn ngữ Python",
         "tech": ["Arduino", "C++", "Python"],
@@ -128,7 +128,7 @@
     ],
     "projects": [
       {
-        "name": "Combined Force Measurement and ECG Data Processing System",
+        "name": "Multipurpose Biometric Measurement System",
         "subject": "Course Project",
         "desc": "Develop a versatile measurement system integrating physical and biological measurements, using an Arduino microcontroller and intensive data processing in Python.",
         "tech": ["Arduino", "C++", "Python"],
@@ -153,5 +153,6 @@
   }
 
 }
+
 
 
