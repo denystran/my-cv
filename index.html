@@ -146,7 +146,6 @@
                 
                 const clickAttr = hasDocs ? `onclick="openModal('projects', ${index})"` : '';
                 const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
-                const expandIcon = hasDocs ? `<i class="fas fa-folder-open" style="float:right; color:#3498db; font-size:14px; margin-top:5px;"></i>` : '';
 
                 projContainer.innerHTML += `
                     <div class="project-card" ${clickAttr} style="${cursorStyle}" title="${hasDocs ? 'Bấm để xem chi tiết' : ''}">
