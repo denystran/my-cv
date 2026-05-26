@@ -1,4 +1,4 @@
-{
+window.CV_DATA = {
   "vi": {
     "labels": {
       "download": "Lưu PDF",
@@ -134,3 +134,4 @@
     ]
   }
 }
+;

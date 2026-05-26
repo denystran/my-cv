@@ -88,6 +88,7 @@
         </div>
     </div>
 
+    <script src="data.js"></script>
     <script>
         let fullData = {}; 
         let currentLang = 'vi';
@@ -148,7 +149,7 @@
                 
                 const clickAttr = hasDocs ? `onclick="openModal('projects', ${index})"` : '';
                 const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
-                const expandIcon = hasDocs ? `<i class="" style="float:right; color:#bdc3c7; font-size:14px; margin-top:5px;"></i>` : '';
+                const expandIcon = hasDocs ? `<i class="fas fa-folder-open" style="float:right; color:#3498db; font-size:14px; margin-top:5px;"></i>` : '';
 
                 projContainer.innerHTML += `
                     <div class="project-card" ${clickAttr} style="${cursorStyle}" title="${hasDocs ? 'Bấm để xem chi tiết' : ''}">
@@ -174,7 +175,7 @@
                     
                     const clickAttr = hasDocs ? `onclick="openModal('certificates', ${index})"` : '';
                     const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
-                    const eyeIcon = hasDocs ? `<i class="" style="margin-left:5px; font-size:12px; color:#3498db;"></i>` : '';
+                    const eyeIcon = hasDocs ? `<i class="fas fa-folder-open" style="margin-left:5px; font-size:12px; color:#3498db;"></i>` : '';
 
                     certContainer.innerHTML += `
                         <div class="cert-card" ${clickAttr} style="${cursorStyle}">
@@ -240,13 +241,25 @@
         }
 
         // --- 5. KHỞI CHẠY ---
-        fetch('data.json')
-            .then(res => res.json())
-            .then(data => {
-                fullData = data;
-                renderCV(fullData.vi);
-            })
-            .catch(err => { console.error(err); alert("Lỗi đọc file data.json! Hãy kiểm tra lại (dùng Live Server)."); });
+        function initCV(data) {
+            fullData = data;
+            renderCV(fullData.vi);
+        }
+
+        if (window.CV_DATA) {
+            initCV(window.CV_DATA);
+        } else {
+            fetch('data.json')
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    return res.json();
+                })
+                .then(initCV)
+                .catch(err => {
+                    console.error(err);
+                    alert("Không đọc được dữ liệu CV. Hãy kiểm tra file data.js/data.json hoặc mở trang bằng Live Server.");
+                });
+        }
     </script>
 </body>
 </html>
