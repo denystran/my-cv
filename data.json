@@ -15,7 +15,7 @@
     "profile": {
       "cv_file": "cv-vi.pdf",
       "name": "Trần Minh Đức",
-      "title": "Sinh viên Kỹ thuật Cơ khí | Định hướng IoT & Automation",
+      "title": "Sinh viên Kỹ thuật Cơ khí",
       "about": "Sinh viên năm 3 chuyên ngành Kỹ thuật Cơ khí tại ĐH Bách Khoa TP.HCM. Có niềm đam mê lớn với Cơ điện tử, kết hợp tư duy thiết kế cơ khí với lập trình hệ thống. Mong muốn ứng dụng công nghệ vào tối ưu hóa sản xuất.",
       "address": "Phường Đông Hòa, TP. Hồ Chí Minh, VN"
     },
@@ -24,31 +24,23 @@
         "school": "Đại học Bách Khoa - ĐHQG TP.HCM",
         "major": "Kỹ thuật Cơ khí (Khóa K23)",
         "time": "2023 - 2028 (Dự kiến)",
-        "courses": "Dung sai & Kỹ thuật đo, Sức bền vật liệu, Trang bị điện - điện tử trong máy công nghiệp, Vật liệu học & xử lý."
+        "courses": "Chi tiết máy, Dung sai & Kỹ thuật đo, Sức bền vật liệu, Trang bị điện - điện tử trong máy công nghiệp, Vật liệu học & xử lý."
       }
     ],
     "skills": {
-      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys (Cơ bản)"],
+      "mechanical": ["Inventor", "AutoCAD", "MATLAB", "Ansys"],
       "electronics": ["Thiết kế mạch PCB", "Vi xử lý (Arduino/ESP32)", "Cảm biến & Loadcell"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
     "certificates": [
-      {
-        "name": "Certified SolidWorks Associate (CSWA)",
-        "issuer": "Dassault Systèmes",
-        "date": "2025",
-        "documents": [
-           { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
-        ]
-      },
-      {
-        "name": "TOEIC 735",
-        "issuer": "IIG Vietnam",
-        "date": "2025",
-        "documents": [
-           { "type": "pdf", "label": "TOEIC Score.pdf", "link": "proofs/toeic.pdf" }
-        ]
-      }
+     {
+  "name": "Chứng chỉ Công nghệ Cắt gọt kim loại (Metal Cutting Technology)",
+  "issuer": "Sandvik Coromant",
+  "date": "2026",
+  "documents": [
+    { "type": "pdf", "label": "Sandvik-Cert.pdf", "link": "proofs/sandvik-cert.pdf" }
+  ]
+}
     ],
     "projects": [
       {
@@ -58,8 +50,7 @@
         "tech": ["Arduino", "C++", "Python"],
         "documents": [
           { "link": "proofs/BTL_DungSai.pdf", "label": "Báo cáo" },
-          { "link": "proofs/loadcell-schematic.pdf", "label": "Sơ đồ nguyên lý (PDF)" }, 
-          { "link": "proofs/BTL_DungSai.mp4", "label": "Video Demo" }
+          { "link": "proofs/loadcell-schematic.pdf", "label": "Sơ đồ nguyên lý (PDF)" }
         ]
       },
       {
@@ -69,10 +60,20 @@
         "tech": ["Proteus", "IC Logic", "PCB Design"],
         "documents": [
           { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Báo cáo" },
-          { "link": "proofs/dengiaothong.pdf", "label": "Sơ đồ nguyên lý (PDF)" },
-          { "link": "proofs/BTL_TrangBiĐien.mp4", "label": "Video Demo" }
+          { "link": "proofs/dengiaothong.pdf", "label": "Sơ đồ nguyên lý (PDF)" }
         ]
-      }
+      },
+      {
+        "name": "Thiết kế máy",
+        "subject": "Đồ án",
+        "desc": "Chế tạo một hệ thống đo lường đa năng, tích hợp giữa phép đo vật lý và sinh học, sử dụng vi điều khiển Arduino và xử lý dữ liệu chuyên sâu bằng ngôn ngữ Python",
+        "tech": ["AutoCAD"],
+        "documents": [
+          { "link": "proofs/2310804_TranMinhDuc_thuyetminh.pdf", "label": "Thuyết minh" },
+          { "link": "proofs/2310804_TranMinhDuc_phacthao.pdf", "label": "Bản vẽ phác thảo" },
+          { "link": "proofs/2310804_TranMinhDuc_chitiet.pdf", "label": "Bản vẽ chi tiết trục" }
+        ]
+      },
     ]
   },
   "en": {
@@ -91,7 +92,7 @@
     "profile": {
       "cv_file": "cv-en.pdf",
       "name": "Tran Minh Duc",
-      "title": "Mechanical Engineering Student | IoT & Automation Enthusiast",
+      "title": "Mechanical Engineering Student",
       "about": "Junior Mechanical Engineering student at Ho Chi Minh City University of Technology (HCMUT). I am passionate about Mechatronics, combining solid mechanical design thinking with system programming. Aiming to apply technology to optimize manufacturing processes.",
       "address": "Dong Hoa Ward, Ho Chi Minh City, VN"
     },
@@ -104,27 +105,19 @@
       }
     ],
     "skills": {
-      "mechanical": ["SolidWorks (CSWA)", "AutoCAD", "MATLAB", "Ansys (Basic)"],
+      "mechanical": ["Inventer", "AutoCAD", "MATLAB", "Ansys"],
       "electronics": ["PCB Design", "Microcontrollers (Arduino/ESP32)", "Sensors & Loadcell"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
     "certificates": [
       {
-        "name": "Certified SolidWorks Associate (CSWA)",
-        "issuer": "Dassault Systèmes",
-        "date": "2025",
-        "documents": [
-           { "type": "img", "label": "CSWA-cert.png", "link": "proofs/cswa-cert.png" }
-        ]
-      },
-      {
-        "name": "TOEIC 735",
-        "issuer": "IIG Vietnam",
-        "date": "2025",
-        "documents": [
-           { "type": "pdf", "label": "TOEIC Score.pdf", "link": "proofs/toeic.pdf" }
-        ]
-      }
+  "name": "Metal Cutting Technology Certificate",
+  "issuer": "Sandvik Coromant",
+  "date": "2026",
+  "documents": [
+    { "type": "pdf", "label": "Sandvik-Cert.pdf", "link": "proofs/sandvik-cert.pdf" }
+  ]
+}
     ],
     "projects": [
       {
