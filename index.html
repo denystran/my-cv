@@ -12,7 +12,7 @@
     <div class="resume-container">
         
         <a id="pdf-btn" href="#" onclick="window.print(); return false;">
-            <span id="lbl-download">PDF</span>
+            PDF
         </a>
 
         <button id="lang-btn" onclick="toggleLanguage()">
@@ -31,7 +31,7 @@
                 
                 <div class="contact-list">
                     <div class="c-item"><i class="fas fa-map-marker-alt"></i> <span id="sb-address"></span></div>
-                    <div class="c-item"><i class="fas fa-envelope"></i> <span>denystran05@gmai.com</span></div>
+                    <div class="c-item"><i class="fas fa-envelope"></i> <span>denystran05@gmail.com</span></div>
                     <div class="c-item"><i class="fas fa-phone"></i> <span>0879 233 369</span></div>
                     <div class="c-item"><i class="fab fa-github"></i> <a href="https://github.com/denystran">github.com/denystran</a></div>
                 </div>
@@ -97,9 +97,12 @@
         function renderCV(langData) {
             const labels = langData.labels;
             const data = langData;
+
+            // SỬA: Cập nhật chữ trên nút in (PDF / PDF)
+            // Không gán href file nữa vì dùng window.print()
             const downText = labels.download ? labels.download : "PDF";
-            document.querySelectorAll('#pdf-btn i').forEach(icon => icon.remove());
-            document.getElementById('lbl-download').textContent = downText;
+            document.getElementById('pdf-btn').textContent = downText;
+
             document.getElementById('lbl-certs').textContent = labels.certs;
             document.getElementById('lbl-edu').textContent = labels.edu;
             document.getElementById('lbl-skills').textContent = labels.skills;
@@ -146,6 +149,7 @@
                 
                 const clickAttr = hasDocs ? `onclick="openModal('projects', ${index})"` : '';
                 const cursorStyle = hasDocs ? 'cursor: pointer;' : 'cursor: default;';
+                const expandIcon = hasDocs ? `<i class="" style="float:right; color:#3498db; font-size:14px; margin-top:5px;"></i>` : '';
 
                 projContainer.innerHTML += `
                     <div class="project-card" ${clickAttr} style="${cursorStyle}" title="${hasDocs ? 'Bấm để xem chi tiết' : ''}">
