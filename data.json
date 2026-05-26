@@ -33,14 +33,14 @@
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
     "certificates": [
-     {
-  "name": "Chứng chỉ Công nghệ Cắt gọt kim loại (Metal Cutting Technology)",
-  "issuer": "Sandvik Coromant",
-  "date": "2026",
-  "documents": [
-    { "type": "pdf", "label": "Sandvik-Cert.pdf", "link": "proofs/sandvik-cert.pdf" }
-  ]
-}
+      {
+        "name": "Chứng chỉ Công nghệ Cắt gọt kim loại (Metal Cutting Technology)",
+        "issuer": "Sandvik Coromant",
+        "date": "2026",
+        "documents": [
+          { "type": "pdf", "label": "Sandvik-Cert.pdf", "link": "proofs/sandvik-cert.pdf" }
+        ]
+      }
     ],
     "projects": [
       {
@@ -73,7 +73,7 @@
           { "link": "proofs/2310804_TranMinhDuc_phacthao.pdf", "label": "Bản vẽ phác thảo" },
           { "link": "proofs/2310804_TranMinhDuc_chitiet.pdf", "label": "Bản vẽ chi tiết trục" }
         ]
-      },
+      }
     ]
   },
   "en": {
@@ -93,56 +93,64 @@
       "cv_file": "cv-en.pdf",
       "name": "Tran Minh Duc",
       "title": "Mechanical Engineering Student",
-      "about": "Junior Mechanical Engineering student at Ho Chi Minh City University of Technology (HCMUT). I am passionate about Mechatronics, combining solid mechanical design thinking with system programming. Aiming to apply technology to optimize manufacturing processes.",
+      "about": "3rd-year Mechanical Engineering student at Ho Chi Minh City University of Technology (HCMUT). Deeply passionate about Mechatronics, combining mechanical design thinking with system programming. Aspiring to apply technology to optimize manufacturing processes.",
       "address": "Dong Hoa Ward, Ho Chi Minh City, VN"
     },
     "education": [
       {
-        "school": "Ho Chi Minh City Univ. of Technology (HCMUT)",
-        "major": "Mechanical Engineering (Batch K23)",
+        "school": "Ho Chi Minh City University of Technology (HCMUT) - VNUHCM",
+        "major": "Mechanical Engineering (Cohort K23)",
         "time": "2023 - 2028 (Expected)",
-        "courses": "Metrology, Theory of Machines, Machine Elements, Strength of Materials, Microprocessors."
+        "courses": "Machine Elements, Tolerances & Metrology, Strength of Materials, Electrical & Electronic Equipment in Industrial Machinery, Materials Science & Processing."
       }
     ],
     "skills": {
-      "mechanical": ["Inventer", "AutoCAD", "MATLAB", "Ansys"],
-      "electronics": ["PCB Design", "Microcontrollers (Arduino/ESP32)", "Sensors & Loadcell"],
+      "mechanical": ["Inventor", "AutoCAD", "MATLAB", "Ansys"],
+      "electronics": ["PCB Design", "Microcontrollers (Arduino/ESP32)", "Sensors & Loadcells"],
       "programming": ["Python", "C/C++", "HTML/CSS/Git"]
     },
     "certificates": [
       {
-  "name": "Metal Cutting Technology Certificate",
-  "issuer": "Sandvik Coromant",
-  "date": "2026",
-  "documents": [
-    { "type": "pdf", "label": "Sandvik-Cert.pdf", "link": "proofs/sandvik-cert.pdf" }
-  ]
-}
+        "name": "Metal Cutting Technology Certificate",
+        "issuer": "Sandvik Coromant",
+        "date": "2026",
+        "documents": [
+          { "type": "pdf", "label": "Sandvik-Cert.pdf", "link": "proofs/sandvik-cert.pdf" }
+        ]
+      }
     ],
     "projects": [
       {
-        "name": "Multipurpose Biometric Measurement System",
+        "name": "Versatile Biological Measurement System",
         "subject": "Course Project",
-        "desc": "Develop a versatile measurement system integrating physical and biological measurements, using an Arduino microcontroller and intensive data processing in Python.",
+        "desc": "Developed a versatile measurement system integrating physical and biological measurements, utilizing an Arduino microcontroller and performing deep data processing using Python.",
         "tech": ["Arduino", "C++", "Python"],
         "documents": [
-          { "link": "proofs/BTL_DungSai.pdf", "label": "Final Report" },
-          { "link": "proofs/loadcell-schematic.pdf", "label": "Schematic Diagram (PDF)" }, 
-          { "link": "proofs/BTL_DungSai.mp4", "label": "Demo Video" }
+          { "link": "proofs/BTL_DungSai.pdf", "label": "Report" },
+          { "link": "proofs/loadcell-schematic.pdf", "label": "Schematic (PDF)" }
         ]
       },
       {
-        "name": "Traffic Light Logic Circuit",
+        "name": "Logic Traffic Light Circuit",
         "subject": "Course Project",
-        "desc": "Designed a 2-lane traffic light control circuit using 555 Timer and Logic ICs. Optimized logic gates to reduce cost and successfully simulated on Proteus before PCB fabrication.",
+        "desc": "Designed a 2-lane intersection traffic control circuit, optimizing the number of logic gates to reduce component costs. Successfully simulated on Proteus prior to PCB fabrication.",
         "tech": ["Proteus", "Logic ICs", "PCB Design"],
         "documents": [
-          { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Final Report" },
-          { "link": "proofs/dengiaothong.pdf", "label": "Schematic Diagram (PDF)" },
-          { "link": "proofs/BTL_TrangBiĐien.mp4", "label": "Demo Video" }
+          { "link": "proofs/BTL_TrangBiĐien.pdf", "label": "Report" },
+          { "link": "proofs/dengiaothong.pdf", "label": "Schematic (PDF)" }
+        ]
+      },
+      {
+        "name": "Machine Design",
+        "subject": "Project",
+        "desc": "Developed a versatile measurement system integrating physical and biological measurements, utilizing an Arduino microcontroller and performing deep data processing using Python.",
+        "tech": ["AutoCAD"],
+        "documents": [
+          { "link": "proofs/2310804_TranMinhDuc_thuyetminh.pdf", "label": "Explanatory Report" },
+          { "link": "proofs/2310804_TranMinhDuc_phacthao.pdf", "label": "Draft Drawing" },
+          { "link": "proofs/2310804_TranMinhDuc_chitiet.pdf", "label": "Shaft Detail Drawing" }
         ]
       }
     ]
   }
-
 }
