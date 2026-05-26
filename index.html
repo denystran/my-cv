@@ -12,7 +12,7 @@
     <div class="resume-container">
         
         <a id="pdf-btn" href="#" onclick="window.print(); return false;">
-            <i class="fas fa-file-download"></i> <span id="lbl-download">PDF</span>
+            <span id="lbl-download">PDF</span>
         </a>
 
         <button id="lang-btn" onclick="toggleLanguage()">
@@ -31,7 +31,7 @@
                 
                 <div class="contact-list">
                     <div class="c-item"><i class="fas fa-map-marker-alt"></i> <span id="sb-address"></span></div>
-                    <div class="c-item"><i class="fas fa-envelope"></i> <span>denystran05@gmail.com</span></div>
+                    <div class="c-item"><i class="fas fa-envelope"></i> <span>duc.tran@hcmut.edu.vn</span></div>
                     <div class="c-item"><i class="fas fa-phone"></i> <span>0879 233 369</span></div>
                     <div class="c-item"><i class="fab fa-github"></i> <a href="https://github.com/denystran">github.com/denystran</a></div>
                 </div>
@@ -101,6 +101,7 @@
             // SỬA: Cập nhật chữ trên nút in (PDF / PDF)
             // Không gán href file nữa vì dùng window.print()
             const downText = labels.download ? labels.download : "PDF";
+            document.querySelectorAll('#pdf-btn i').forEach(icon => icon.remove());
             document.getElementById('lbl-download').textContent = downText;
 
             document.getElementById('lbl-certs').textContent = labels.certs;
